@@ -1,15 +1,17 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,Output,EventEmitter} from '@angular/core';
 import {FormGroup,FormBuilder,Validators,FormControl,ValidatorFn,AbstractControl} from '@angular/forms';
 import {Users} from '../models/Users';
+import {UsersPageComponent} from '../users/users-page.component';
 @Component({
   selector:'login-form',
   templateUrl:'./login-form.component.html',
   styleUrls:['./login.component.css']
 })
 export class LoginFormComponent implements OnInit{
+  @Output() loadRegistrationPage = new EventEmitter<number>()
    userForm:FormGroup;
    user:Users = new Users(0,'alexi','alex','smith','alixsmith@newLogic.io','password@private');
-    constructor(private fb:FormBuilder){
+    constructor(private fb:FormBuilder,private usersPageComponent:UsersPageComponent){
       this.createForm();
     }
     createForm(){
@@ -37,6 +39,8 @@ export class LoginFormComponent implements OnInit{
 
     requestRegistration(){
       console.log('Registration request...');
+      this.loadRegistrationPage.emit(2);
+      this.usersPageComponent.loadRequestedComponent(1);
     }
 }
 export function regexValidator(passwordPattern:RegExp):ValidatorFn{

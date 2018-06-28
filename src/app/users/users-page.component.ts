@@ -35,5 +35,10 @@ export class UsersPageComponent implements OnInit,OnDestroy {
     this.index = this.index+1;
     this.loadComponent();
   }
+  loadRequestedComponent(index:number){
+    console.log("Parent call received");
+    this.index = index;
+    this.loadComponent();
+  }
 
 }

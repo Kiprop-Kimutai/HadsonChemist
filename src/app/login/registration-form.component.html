@@ -1,0 +1,74 @@
+<div class = "loginform">
+<mat-card style = "margin-bottom:10px;">
+<form [formGroup] = "registrationForm" class = "login-formGroup" >
+<div class = "formGroup">
+<label for = "firstname" class = "field-label">firstname</label><br>
+<mat-form-field class = "input-field">
+<input matInput id = "firstname" type = "text" formControlName = "firstname" [(ngModel)] = "modelUser.firstname" name = "firstname" required/>
+</mat-form-field>
+<div *ngIf = "registrationForm.get('firstname').touched">
+<span *ngIf ="registrationForm.hasError('required','firstname')" class = "input-errors">username is required</span><br>
+<span *ngIf ="registrationForm.hasError('minlength','firstname')" class = "input-errors">minimum is 2 letters</span>
+<span *ngIf ="registrationForm.hasError('invalidPattern','firstname')" class = "input-errors">no special characters allowed</span>
+</div>
+</div>
+<div class = "formGroup">
+<label for  = "lastname" class = "field-label">lastname</label><br>
+<mat-form-field class="input-field">
+<input matInput id = "lastname" type="text" formControlName = "lastname" [(ngModel)] = "modelUser.lastname" name = "lastname" required/>
+</mat-form-field>
+<div *ngIf = "registrationForm.get('lastname').touched">
+<span *ngIf ="registrationForm.hasError('required','lastname')" class = "input-errors">lastname is required</span><br>
+<span *ngIf ="registrationForm.hasError('minlength','lastname')" class = "input-errors">minimum is 2 letters</span>
+<span *ngIf ="registrationForm.hasError('invalidPattern','lastname')" class = "input-errors">no special characters allowed</span>
+</div>
+</div>
+<div class = "formGroup">
+<label for = "username" class = "field-label">username</label><br>
+<mat-form-field class = "input-field">
+<input matInput id = "username" type = "text"  formControlName = "username" [(ngModel)] = "modelUser.username" name ="username"  required/>
+</mat-form-field>
+<div *ngIf = "registrationForm.get('username').touched">
+<span *ngIf = "registrationForm.hasError('required','username')" class = "input-errors">username is required</span><br>
+<span *ngIf = "registrationForm.hasError('invalidPassword','username')" class = "input-errors">only letters allowed</span>
+</div>
+</div>
+<div class = "formGroup">
+<label for = "email" class = "field-label">email</label><br>
+<mat-form-field class = "input-field">
+<input matInput id = "email" type = "email" formControlName = "email" [(ngModel)] = "modelUser.email" name = "email" required/>
+</mat-form-field>
+<div *ngIf = "registrationForm.get('email').touched">
+<span *ngIf ="registrationForm.hasError('required','email')" class = "input-errors">email is required</span><br>
+<span *ngIf ="!registrationForm.hasError(null,'email')" class = "input-errors">invalid email address</span>
+</div>
+</div>
+  <div class = "formGroup">
+  <label class = "field-label" style = "label::after{content:'*';color:red}">password</label><br>
+  <mat-form-field class = "input-field">
+  <input matInput id = "password" type = "password" formControlName = "password" [(ngModel)] = "modelUser.password"/>
+  </mat-form-field>
+  <div *ngIf= "registrationForm.get('password').touched">
+  <span *ngIf = "registrationForm.hasError('required','password')" class = "input-errors">password required</span><br>
+  <span *ngIf = "registrationForm.hasError('minlength','password')" class = "input-errors">minimum 8 characters</span>
+  </div>
+  </div>
+  <div class = "formGroup">
+  <label class = "field-label" >confirm password</label><br>
+  <mat-form-field class = "input-field">
+  <input matInput id = "confirmpassword" type = "password" formControlName = "confirm_password"  #box (keyup) = "comparePasswords(box.value)"/>
+  </mat-form-field>
+  <div *ngIf= "registrationForm.get('confirm_password').touched">
+  <span *ngIf = "registrationForm.hasError('required','confirm_password')" class = "input-errors">password required</span><br>
+   <span *ngIf = "!passwordMatch" class = "input-errors">passwords do not match</span>
+  </div>
+  </div>
+<div class = "login-button">
+<button  [disabled] = "registrationForm.status === 'INVALID' || !passwordMatch" mat-raised-button  color = "primary">register</button>
+</div>
+<div style = "margin-top:10%;font-size:0.7em;">
+<span>Not new? <label style="color:blue" (click) = "requestLogin()">Login</label></span>
+</div>
+</form>
+</mat-card>
+</div>

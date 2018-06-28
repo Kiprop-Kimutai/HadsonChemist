@@ -1,7 +1,7 @@
 <div class = "loginform">
 <p>Login form</p>
 <mat-card>
-<form [formGroup] = "userForm" class = "login-formGroup" >
+<form [formGroup] = "userForm" class = "login-formGroup" (ngSubmit) = "login()">
 <div class = "formGroup">
 <label for = "username" class = "field-label">username</label><br>
 <mat-form-field class = "input-field">
@@ -13,7 +13,7 @@
 </div>
 
 </div>
-  <div [formGroup] = "userForm">
+  <div class = "formGroup">
   <label class = "field-label" >password</label><br>
   <mat-form-field class = "input-field">
   <input matInput id = "password" type = "password" formControlName = "password" [(ngModel)] = "user.password"/>
@@ -24,10 +24,10 @@
   </div>
   </div>
 <div class = "login-button">
-<button [disabled] = "userForm.status === 'INVALID'"mat-raised-button  color = "primary">sign in</button>
+<button type = "submit"[disabled] = "userForm.status === 'INVALID'"mat-raised-button  color = "primary">sign in</button>
 </div>
 <div style = "margin-top:10%;font-size:0.7em;">
-<span>New? <label style="color:blue" (click) = "requestRegistration()">Register instead</label></span>
+<span>New? <label style="color:blue;text-decoration:underline" (click) = "requestRegistration()">Register instead</label></span>
 </div>
 <p>{{userForm.status}}</p>
 </form>

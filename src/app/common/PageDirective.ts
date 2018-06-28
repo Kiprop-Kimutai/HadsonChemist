@@ -4,4 +4,7 @@ import {Directive,ViewContainerRef} from '@angular/core';
 })
 export class PageDirective{
   constructor(public viewContainerRef:ViewContainerRef){}
+  onLoadRegistrationPage(number){
+    console.log("Parent call received");
+  }
 }
