@@ -1,0 +1,18 @@
+<div>
+<mat-nav-list>
+<a *ngIf = "menu.type === 'link'"mat-list-item href = "">
+<img src = "../../assets/icons/{{menu.icon}}.png" style = "margin-left:12px;"/>
+<span style = "margin-top:6px;margin-left:6px;">{{menu.label}}</span>
+</a>
+<mat-list-item *ngIf = "menu.type === 'parent'" (click) = "showSubmenus()">
+<img src = "../../assets/icons/{{menu.icon}}.png" style = "margin-left:12px;"/>
+<span style = "margin-left:6px;">{{menu.label}}</span>
+<img src = "../../assets/icons/{{slidericon}}.png" style = "position:relative;margin-left:15px;">
+</mat-list-item>
+</mat-nav-list>
+<div *ngIf = "showChildren" class = "submenus">
+<mat-nav-list>
+<a *ngFor = "let child of menu.children" mat-list-item href = "" >{{child.label}}</a>
+</mat-nav-list>
+</div>
+</div>
