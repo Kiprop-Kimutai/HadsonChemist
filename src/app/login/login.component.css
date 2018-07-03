@@ -62,13 +62,12 @@
   margin-top:10px;
 }
 .html{
-  background: url(../../assets/compulynx.png) no-repeat center fixed;
+
  background-size: cover;
 }
 
 @media only screen and (min-device-width:1360px) {
   .header{
-    background: url('../../assets/compulynx-compressed.jpg') no-repeat center fixed;
     /*background-size: contain;*/
    /*background-size: cover;*/
    background-size: 100% 90%;
@@ -77,13 +76,11 @@
 }
 @media only screen and (max-device-width:1360px), only screen and (min-device-width:768px){
   .header{
-    background:url('../../assets/logo.png') no-repeat center fixed;
     background-size: contain;
   }
 }
 @media only screen and (max-device-width:768px){
   .header{
-    background:url('../../assets/compas.png') no-repeat center fixed;
     /*background-size:100% 80vh;*/
     background-size: contain;
 

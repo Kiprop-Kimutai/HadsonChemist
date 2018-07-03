@@ -1,0 +1,70 @@
+.body{
+  height:auto;
+}
+.toolbar{
+  margin:-8px;
+}
+.mat-drawer-container {
+  height: auto;
+  margin: -8px;
+  border: 1px solid #555;
+}
+.mat-drawer{
+  background-color:rgba(199, 208, 227, 0.14);
+}
+.submenus{
+  margin-left: 45px;
+}
+
+@media only screen and (min-device-width:830px){
+  .mat-drawer{
+    width: 15vw;
+  }
+}
+@media only screen and (max-device-width:640px){
+ .toolbar,.mat-drawer-container{
+   /*margin-right:-300px;*/
+  }
+  .mat-drawer{
+    background-color: grey;
+  }
+
+  .body{
+    /*background-color: blue;*/
+  }
+
+}
+@media only screen and (max-device-width:367px){
+ .toolbar,.mat-drawer-container{
+  /*  margin-right:-340px;*/
+  }
+
+  .body{
+    /*background-color: grey;*/
+  }
+
+}
+@media only screen and (max-device-width:298px){
+  .toolbar,.mat-drawer-container{
+    /*margin-right:-360px;*/
+  }
+  .body{
+    /*background-color: red;*/
+  }
+}
+@media only screen and (max-device-width:285px){
+  .toolbar,.mat-drawer-container{
+    /*margin-right:-500px;*/
+  }
+  .body{
+    /*background-color: blue;*/
+  }
+}
+@media only screen and (max-device-width:117px){
+  .toolbar,.mat-drawer-container{
+  /*margin-right:-560px;*/
+  }
+  .body{
+  /*  background-color:gray;*/
+  }
+}

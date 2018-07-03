@@ -10,8 +10,9 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   public lineChartData:Array<any> = [
-    {data: [1.1.0, 1.2.0, 1.2.5, 2.0.0, 2.5.0, 2.5.0, 2.5.0], label: 'SARAL INFO'},
-    {data: [1.1.0, 1.1.0, 1.2.0, 1.2.5, 1.2.5, 2.0.0, 2.1.0], label: 'NEWPOS 9220'}];
+    {data: [1.1, 1.2, 1.25, 2.00, 2.50, 2.50, 2.50], label: 'SARAL INFO'},
+    {data: [1.10, 1.10, 1.20, 1.25, 1.25, 2.00, 2.10], label: 'NEWPOS 9220'}
+  ];
   public lineChartLabels:Array<any> = ['1.0.0', '1.1.0', '1.2.0', '1.3.0', '1.3.1', '1.3.2', '1.3.4'];
   public lineChartOptions:any = {
    responsive: true
@@ -57,8 +58,6 @@ public lineChartBarData:Array<any> = [
   ];
   public lineChartBarLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartBarType:string = 'line';
-  public pieChartType:string = 'pie';
-
   chartClicked(e:any){
     console.log(e);
     this.lineChartBarType = this.lineChartBarType === 'line' ? 'bar' :'line';

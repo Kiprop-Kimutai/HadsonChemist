@@ -2,6 +2,8 @@ import {Component,OnInit,Output,EventEmitter} from '@angular/core';
 import {FormGroup,FormBuilder,Validators,FormControl,ValidatorFn,AbstractControl} from '@angular/forms';
 import {Users} from '../models/Users';
 import {UsersPageComponent} from '../users/users-page.component';
+import {AuthService} from './auth.service';
+import {Router,RouterStateSnapshot,ActivatedRouteSnapshot} from '@angular/router';
 @Component({
   selector:'login-form',
   templateUrl:'./login-form.component.html',
@@ -11,7 +13,7 @@ export class LoginFormComponent implements OnInit{
   @Output() loadRegistrationPage = new EventEmitter<number>()
    userForm:FormGroup;
    user:Users = new Users(0,'alexi','alex','smith','alixsmith@newLogic.io','password@private');
-    constructor(private fb:FormBuilder,private usersPageComponent:UsersPageComponent){
+    constructor(private fb:FormBuilder,private usersPageComponent:UsersPageComponent,private authService:AuthService,private router:Router){
       this.createForm();
     }
     createForm(){
@@ -26,8 +28,15 @@ export class LoginFormComponent implements OnInit{
       //this.createForm();
     }
 
-    login(){
-      console.log("Logged in successfully");
+    login(username:string,password:string){
+      if(this.authService.login(username,password)){
+        console.log("Logged in successfully");
+        console.log(username);
+        this.router.navigate(['/layout']);
+      }
+      else{
+        console.log("Not logged in");
+      }
     }
 
     get diagnostic(){

@@ -1,7 +1,6 @@
 <div class = "loginform">
-<p>Login form</p>
 <mat-card>
-<form [formGroup] = "userForm" class = "login-formGroup" (ngSubmit) = "login()">
+<form [formGroup] = "userForm" class = "login-formGroup" (ngSubmit) = "login(user.username,user.password)">
 <div class = "formGroup">
 <label for = "username" class = "field-label">username</label><br>
 <mat-form-field class = "input-field">
@@ -16,7 +15,7 @@
   <div class = "formGroup">
   <label class = "field-label" >password</label><br>
   <mat-form-field class = "input-field">
-  <input matInput id = "password" type = "password" formControlName = "password" [(ngModel)] = "user.password"/>
+  <input matInput id = "password" type = "password" formControlName = "password" [(ngModel)] = "user.password" name = "password"/>
   </mat-form-field>
   <div *ngIf= "userForm.get('password').touched">
   <span *ngIf = "userForm.hasError('required','password')" class = "input-errors">password required</span>

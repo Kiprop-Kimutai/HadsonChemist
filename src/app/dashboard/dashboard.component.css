@@ -3,16 +3,11 @@
   height:15vh;
 }
 .card-header-image{
-  background-image: url('../../assets/20.jpg');
-  background-size: cover;
+
 }
 .test{
-  background-image: url('../../assets/8210.jpg');
-  background-size: cover;
 }
 .mifare{
-  background-image: url('../../assets/mifare.jpg');
-  background-size: cover;
 }
 .charts-container{
   margin-top:20px;
