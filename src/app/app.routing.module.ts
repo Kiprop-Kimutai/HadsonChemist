@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule,Routes} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
-
+import {DashboardComponent} from './dashboard/dashboard.component';
 const appRoutes:Routes = [
   {
     path:'',
@@ -15,7 +15,13 @@ const appRoutes:Routes = [
   },
   {
     path:'layout',
-    component:LayoutComponent
+    component:LayoutComponent,
+    children:[
+      {
+        path:'',
+        component:DashboardComponent
+      }
+    ]
   }
 ]
 @NgModule({
