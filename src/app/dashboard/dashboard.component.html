@@ -1,0 +1,70 @@
+<div>
+<div fxLayout = "row" fxLayout.xs = "column" fxHide.xs = true>
+<mat-card fxFlex = "20vw" class = "matcard">
+<!--<mat-card-title>Devices</mat-card-title>-->
+<mat-card-subtitle>Model:NEWPOS 9220</mat-card-subtitle>
+<span>No:320</span><br>
+<span>Firmware:3.2.0</span>
+</mat-card>
+<mat-card fxFlex = "20vw" class="matcard">
+<mat-card-subtitle>Model:SARAL INFOTECH</mat-card-subtitle>
+<span>No:25</span><br>
+<span>Firmware:2.4.0</span>
+</mat-card>
+<mat-card fxHide.xs = true fxFlex = "20vw" class = "matcard">
+<mat-card-subtitle>MIFARE EV2 4K</mat-card-subtitle>
+<span>No:24000</span><br>
+</mat-card>
+<mat-card fxHide.xs = true fxFlex = "20vw" class = "matcard">
+<mat-card-subtitle>COMPAS AGENCY API</mat-card-subtitle>
+<span>Version:1.2.0</span>
+</mat-card>
+<mat-card fxFlex = "20vw" class = "matcard">
+<mat-card-subtitle>COMPAS API</mat-card-subtitle>
+<span>Version:2.2.1</span>
+</mat-card>
+</div>
+<div class = "charts-container">
+<mat-card fxFlex="30vw" fxFlex.xs = "45vw" fxFlexOffset.xs = "1vw" class = "linechart">
+<div>
+  <div>
+    <div style="display: block;">
+    <canvas baseChart width="10" height="10"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+</div>
+</mat-card>
+<mat-card fxFlex = "30vw" fxFlexOffset = "10vw" fxFlex.xs = "45vw" fxFlexOffset.xs = "" class = "linechart">
+<div style="display: block" style = "position:relative">
+  <canvas baseChart height = "250vh"
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+</div>
+</mat-card>
+</div>
+<div class = "charts-container">
+<mat-card fxFlexOffset = "10vw" fxFlex = "50vw" fxFlexOffset.xs = "1vw" fxFlex.xs = "90vw">
+ <div class="col-md-6" class="device-line-chart">
+
+    <canvas baseChart
+                [datasets]="lineChartBarData"
+                [labels]="lineChartBarLabels"
+                [options]="lineChartOptions"
+                [chartType]="lineChartBarType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</mat-card>
+</div>
+</div>

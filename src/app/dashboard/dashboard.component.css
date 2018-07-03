@@ -1,0 +1,31 @@
+.matcard{
+  margin:5px;
+  height:15vh;
+}
+.card-header-image{
+  background-image: url('../../assets/20.jpg');
+  background-size: cover;
+}
+.test{
+  background-image: url('../../assets/8210.jpg');
+  background-size: cover;
+}
+.mifare{
+  background-image: url('../../assets/mifare.jpg');
+  background-size: cover;
+}
+.charts-container{
+  margin-top:20px;
+}
+.linechart{
+  margin:5px;
+
+}
+.device-line-chart{
+
+}
+@media only screen and(max-device-width:640px){
+  .device-line-chart{
+    height:30vh;
+  }
+}
