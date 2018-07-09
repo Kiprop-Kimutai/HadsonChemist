@@ -11,9 +11,11 @@
 }
 .charts-container{
   margin-top:20px;
+  margin-left: 5px;
 }
 .linechart{
   margin:5px;
+  margin-left: 5px;
 
 }
 .device-line-chart{
@@ -22,5 +24,10 @@
 @media only screen and(max-device-width:640px){
   .device-line-chart{
     height:30vh;
+  }
+}
+@media only screen and (max-device-width:599px){
+  .charts-container{
+    height:70vh;
   }
 }
