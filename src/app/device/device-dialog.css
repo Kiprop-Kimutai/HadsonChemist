@@ -1,0 +1,43 @@
+.example-radio-group {
+    display: inline-flex;
+    flex-direction: row;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+  
+  .example-selected-value {
+    margin: 15px 0;
+  }
+  .add-button{
+      position:relative;
+      background-color: teal;
+     
+    }
+
+    @media only screen and (min-device-width:1000px){
+        .add-button{
+            margin-left:20vw;
+        }
+    }
+    @media only screen and (max-device-width:999px){
+        .add-button{
+            margin-left:30vw;
+        }
+    }
+    @media only screen and (max-device-width:699px){
+        .add-button{
+            margin-left:40vw;
+        }
+    }
+    @media only screen and (max-device-width:483px){
+        .add-button{
+            margin-left:50vw;
+        }
+    }
+    @media only screen and (max-device-width:381px){
+        .add-button{
+            margin-left:65vw;
+        }
+    }

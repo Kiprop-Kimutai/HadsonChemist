@@ -1,0 +1,63 @@
+<div class = "body">
+  <div>
+    <button class = "add-button" mat-icon-button matTooltip = "add device"  (click) = "addNewDevice()"><img src = "../../assets/icons/add.png"/></button>
+  </div>
+<mat-form-field class = "filterField">
+  <input  matInput (keyup)= "filterDevices($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="renderDevices" class="mat-elevation-z8">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let device" (click) = "navigateToDevice(device.id)"> {{device.id}} </td>
+  </ng-container>
+
+  <!-- macaddress Column -->
+  <ng-container matColumnDef="macaddress">
+    <th mat-header-cell *matHeaderCellDef> macaddress </th>
+    <td mat-cell *matCellDef="let device" (click) = "navigateToDevice(device.id)"> {{device.macaddress}} </td>
+  </ng-container>
+
+  <!-- serialno Column -->
+  <ng-container matColumnDef="serialno">
+    <th mat-header-cell *matHeaderCellDef> serial </th>
+    <td mat-cell *matCellDef="let device" (click) = "navigateToDevice(device.id)"> {{device.serialno}} </td>
+  </ng-container>
+
+  <!-- model Column -->
+  <ng-container matColumnDef="model">
+    <th mat-header-cell *matHeaderCellDef>model</th>
+    <td mat-cell *matCellDef="let device" (click) = "navigateToDevice(device.id)"> {{device.model}} </td>
+  </ng-container>
+
+  <!-- kernel Column -->
+  <ng-container matColumnDef="kernel">
+    <th mat-header-cell *matHeaderCellDef>kernel</th>
+    <td mat-cell *matCellDef="let device" (click) = "navigateToDevice(device.id)"> {{device.kernel}} </td>
+  </ng-container>
+
+  <!-- firmware Column -->
+  <ng-container matColumnDef="firmware">
+    <th mat-header-cell *matHeaderCellDef>firmware</th>
+    <td mat-cell *matCellDef="let device" (click) = "navigateToDevice(device.id)"> {{device.firmware}} </td>
+  </ng-container>
+
+  <!-- status Column -->
+  <ng-container matColumnDef="active">
+    <th mat-header-cell *matHeaderCellDef>model</th>
+    <td mat-cell *matCellDef="let device" (click) = "navigateToDevice(device.id)"> {{device.active}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div>
+<mat-paginator [length]= "dataLength"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="[2, 3, 5, 10, 25, 100]"
+              (page) = "pageEvent = $event" (page) = "paginateValues(pageEvent.pageSize,pageEvent.pageIndex)">
+</mat-paginator >
+</div>
+</div>
