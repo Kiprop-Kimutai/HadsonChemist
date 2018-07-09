@@ -59,8 +59,8 @@ export class DeviceListComponent implements OnInit{
     }
   }
 
-  paginateValues(pageSize:string,pageIndex:string){
-    this.renderDevices = <Device[]>paginatorFunction(this.paginatedDevices,+pageSize,+pageIndex);
+  paginateValues(pageSize:number,pageIndex:number){
+    this.renderDevices = <Device[]>paginatorFunction(this.paginatedDevices,pageSize,pageIndex);
   }
 
   navigateToDevice(id:number){
