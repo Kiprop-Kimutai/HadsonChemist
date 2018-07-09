@@ -24,46 +24,64 @@
 <span>Version:2.2.1</span>
 </mat-card>
 </div>
-<div class = "charts-container">
-<mat-card fxFlex="30vw" fxFlex.xs = "45vw" fxFlexOffset.xs = "1vw" class = "linechart">
+<div class = "charts-container" fxLayout = "row" fxLayout.xs= "row">
+<mat-card  fxFlex="30vw" fxFlex.xs = "48vw" fxFlexOffset.xs = "2vw" class = "linechart">
 <div>
-  <div>
-    <div style="display: block;">
-    <canvas baseChart width="10" height="10"
+    <div style="display:block;">
+    <canvas  *ngIf = "showBarChart_gt_sm" baseChart width="10" height = "10"
                 [datasets]="lineChartData"
                 [labels]="lineChartLabels"
                 [options]="lineChartOptions"
                 [colors]="lineChartColors"
                 [legend]="lineChartLegend"
                 [chartType]="lineChartType"
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)"></canvas>
+                (chartHover)="chartHovered($event)"></canvas>
+
+    <canvas *ngIf = "showBarChart_xs" baseChart width="15" height = "30"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"></canvas>
     </div>
-  </div>
 </div>
 </mat-card>
-<mat-card fxFlex = "30vw" fxFlexOffset = "10vw" fxFlex.xs = "45vw" fxFlexOffset.xs = "" class = "linechart">
-<div style="display: block" style = "position:relative">
-  <canvas baseChart height = "250vh"
+<mat-card fxFlex = "30vw" fxFlexOffset = "10vw" fxFlex.xs = "48vw" fxFlexOffset.xs = "2" class = "linechart">
+<div  style="display: block" style = "position:relative">
+  <canvas *ngIf = "showBarChart_gt_sm" baseChart height = "250"
           [data]="pieChartData"
           [labels]="pieChartLabels"
           [chartType]="pieChartType"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
+          (chartHover)="chartHovered($event)"></canvas>
+<canvas *ngIf = "showBarChart_xs" baseChart height = "370"
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        (chartHover)="chartHovered($event)"></canvas>
+</div>
+<div  style="display: block" style = "position:relative">
+
 </div>
 </mat-card>
 </div>
 <div class = "charts-container">
 <mat-card fxFlexOffset = "10vw" fxFlex = "50vw" fxFlexOffset.xs = "1vw" fxFlex.xs = "90vw">
  <div class="col-md-6" class="device-line-chart">
-
-    <canvas baseChart
+    <canvas *ngIf = "showBarChart_gt_sm" baseChart
                 [datasets]="lineChartBarData"
                 [labels]="lineChartBarLabels"
                 [options]="lineChartOptions"
                 [chartType]="lineChartBarType"
                 (chartHover)="chartHovered($event)"
                 (chartClick)="chartClicked($event)"></canvas>
+    <canvas *ngIf = "showBarChart_xs" baseChart height="250"
+                [datasets]="lineChartBarData"
+                [labels]="lineChartBarLabels"
+                [options]="lineChartOptions"
+                [chartType]="lineChartBarType"
+                (chartHover)="chartHovered($event)"></canvas>
   </div>
 </mat-card>
 </div>
