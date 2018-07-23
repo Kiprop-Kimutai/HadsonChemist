@@ -18,9 +18,9 @@ export class DeviceService{
     }
 }
  const  devices:Device[] = [
-  new Device(1,"00:25:7E:03:54",'123432ftp','NewPOS 8210','1.2.3-aa','2.3.0',true),
-  new Device(2,"00:25:7E:03:44",'855782cd1','NewPOS 8210','1.1.3-aa','1.1.4',false),
-  new Device(3,"8fcbdg45",'76873pc','Saral Info','4.6 Jelly Bean','1.1.0',true),
-  new Device(4,'9f6b4d72f','8cg4230pci','NewPOS 9220','6.0 Marsh Mallow','1.1.0',true)
+  new Device(1,"00:25:7E:03:54",'123432ftp','NewPOS 8210','1.2.3-aa','2.3.0',"",true),
+  new Device(2,"00:25:7E:03:44",'855782cd1','NewPOS 8210','1.1.3-aa','1.1.4',"",false),
+  new Device(3,"8fcbdg45",'76873pc','Saral Info','4.6 Jelly Bean','1.1.0',"",true),
+  new Device(4,'9f6b4d72f','8cg4230pci','NewPOS 9220','6.0 Marsh Mallow','1.1.0',"",true)
 ]
 
