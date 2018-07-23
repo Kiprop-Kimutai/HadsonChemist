@@ -12,8 +12,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 @NgModule({
-  imports:[MatToolbarModule,MatButtonModule,MatInputModule,MatCardModule,MatSidenavModule,MatTooltipModule,MatListModule,MatTableModule,MatPaginatorModule,MatDialogModule,MatDividerModule,MatFormFieldModule,MatRadioModule],
-  exports:[MatToolbarModule,MatButtonModule,MatInputModule,MatCardModule,MatSidenavModule,MatTooltipModule,MatListModule,MatTableModule,MatPaginatorModule,MatDialogModule,MatDividerModule,MatFormFieldModule,MatRadioModule]
+  imports:[MatToolbarModule,MatButtonModule,MatInputModule,MatCardModule,MatSidenavModule,MatTooltipModule,MatListModule,MatTableModule,MatPaginatorModule,MatDialogModule,MatDividerModule,MatFormFieldModule,MatRadioModule,MatSlideToggleModule],
+  exports:[MatToolbarModule,MatButtonModule,MatInputModule,MatCardModule,MatSidenavModule,MatTooltipModule,MatListModule,MatTableModule,MatPaginatorModule,MatDialogModule,MatDividerModule,MatFormFieldModule,MatRadioModule,MatSlideToggleModule]
 })
 export class MaterialModule{}
+
+
