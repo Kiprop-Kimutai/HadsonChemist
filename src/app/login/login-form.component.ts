@@ -28,15 +28,28 @@ export class LoginFormComponent implements OnInit{
       //this.createForm();
     }
 
-    login(username:string,password:string){
-      if(this.authService.login(username,password)){
+    login(username:string,password:string):any{
+      this.authService.login(username,password).subscribe(data =>{
+        console.log(data);
+        if(data == true){
+          console.log("Logged in successfully");
+          console.log(this.authService.redirectUrl);
+          if(this.authService.redirectUrl){
+            this.router.navigate([this.authService.redirectUrl]);
+            return;
+          }
+          this.router.navigate(['/layout']);
+        }
+        console.log("Not logged in");
+      });
+      /*if(this.authService.login(username,password)){
         console.log("Logged in successfully");
         console.log(username);
         this.router.navigate(['/layout']);
       }
       else{
         console.log("Not logged in");
-      }
+      }*/
     }
 
     get diagnostic(){
