@@ -10,6 +10,10 @@
   .example-selected-value {
     margin: 15px 0;
   }
+  .header-label{
+      position: relative;
+      text-align: center;
+  }
   .add-button{
       position:relative;
       background-color: teal;
