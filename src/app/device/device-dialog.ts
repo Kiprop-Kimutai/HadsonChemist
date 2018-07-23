@@ -7,7 +7,7 @@ import {DeviceService} from './device.service';
 @Component({
     template:`
     <div>
-    <h3>Register new Device</h3>
+    <h3 class = "header-label">Register new Device</h3>
     <form [formGroup] = "deviceForm" (ngSubmit) = "registerDevice()">
     <table>
     <tr>
@@ -76,7 +76,7 @@ import {DeviceService} from './device.service';
     styleUrls:['./device-dialog.css']
 })
 export class DeviceDialog implements OnInit{
-    device:Device = new Device(0,"","","","","",false);
+    device:Device = new Device(0,"","","","","","",false);
     deviceForm:FormGroup;
     statuses:boolean[] = [true,false];
     testStatus:boolean;
