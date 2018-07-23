@@ -126,13 +126,7 @@ tr:hover{
   }
 }
 
-/***** DEVICE DETAILS' STYLES **********/
-.device-details-body{
-  min-height: 100vh;
-  height: auto;
-  position: relative;
-  margin-left: 30px;
-}
+
 
 
 
