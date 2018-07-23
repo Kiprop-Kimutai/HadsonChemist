@@ -6,6 +6,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {DeviceListComponent} from './device/device-list.component';
 import {DeviceComponent} from './device/device.component';
 import {PageNotFoundComponent} from './page-not-found.component';
+import {AuthGuardService} from './auth-guard.service';
+import {CanDeactivateGuard} from './can-deactivate-guard.service';
 const appRoutes:Routes = [
   {
     path:'',
@@ -21,6 +23,10 @@ const appRoutes:Routes = [
     component:LayoutComponent,
     children:[
       {
+      path:'',
+      canActivate:[AuthGuardService],
+      children:[
+      {
         path:'',
         component:DashboardComponent
       },
@@ -30,12 +36,19 @@ const appRoutes:Routes = [
       },
       {
         path:'device/:id',
-        component:DeviceComponent
+        component:DeviceComponent,
+        canDeactivate:[CanDeactivateGuard]
       },
       {
         path:'dashboard',
         component:DashboardComponent
+      },
+      {
+        path:'firmware',
+        loadChildren:'app/firmware/firmware-module#FirmwareModule'
       }
+    ]
+    }
     ]
   },
   {
