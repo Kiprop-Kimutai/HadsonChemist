@@ -1,0 +1,17 @@
+.body{
+    min-height:100vh;
+}
+mat-form-field{
+    width:100%;
+}
+form{
+    /*background-color: aliceblue;*/
+}
+mat-card{
+    margin:5px;
+}
+@media only screen and (max-device-width:599px){
+    mat-form-field{
+        width:100%;
+    }
+}
