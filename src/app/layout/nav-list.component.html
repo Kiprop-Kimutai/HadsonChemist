@@ -12,7 +12,7 @@
 </mat-nav-list>
 <div *ngIf = "showChildren" class = "submenus">
 <mat-nav-list>
-<a *ngFor = "let child of menu.children" mat-list-item [routerLink] = "[child.name]" >
+<a *ngFor = "let child of menu.children" mat-list-item [routerLink] = "[menu.name,child.name]" >
     {{child.label}}
     <mat-divider></mat-divider>
 </a>
