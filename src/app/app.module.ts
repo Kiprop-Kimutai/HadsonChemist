@@ -17,6 +17,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {PageNotFoundComponent} from './page-not-found.component';
 import {DeviceListComponent} from './device/device-list.component';
 import {DeviceComponent} from './device/device.component';
+import {DeviceFirmwareComponent} from './device_firmware/device_firmware';
 import {FilterDevicess} from './device/filterDevices';
 import {DeviceDialog} from './device/device-dialog';
 import {ServiceModule} from './services.module';
@@ -24,6 +25,7 @@ import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { ChartsModule } from 'ng2-charts';
 import {DialogService} from './dialog.service';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +35,12 @@ import {DialogService} from './dialog.service';
     NavListComponent,
     LoginFormComponent,
     RegisterFormComponent,
-    DashboardComponent,
+    DashboardComponent,DeviceFirmwareComponent,
     PageDirective,DeviceDialog,DeviceComponent,DeviceListComponent,FilterDevicess,PageNotFoundComponent
   ],
   imports: [
     BrowserModule,CommonModule,BrowserAnimationsModule,AppRoutingModule,ReactiveFormsModule,FormsModule,MaterialModule,
-    FlexLayoutModule,ChartsModule,ServiceModule
+    FlexLayoutModule,ChartsModule,ServiceModule,HttpClientModule
 
   ],
   providers: [UserFormService,DialogService],
