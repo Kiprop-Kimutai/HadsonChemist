@@ -95,3 +95,8 @@
     padding-left:40%;
   }
 }
+@media only screen and (max-device-width:252px){
+  .loginform{
+    width:100%;
+  }
+}
