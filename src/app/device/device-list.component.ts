@@ -65,7 +65,7 @@ export class DeviceListComponent implements OnInit{
 
   navigateToDevice(id:number){
     console.log("click.."+id);
-    this.router.navigate(['/layout/device',id]);
+    this.router.navigate(['/layout/devices/device-list',id]);
   }
 
   addNewDevice(){

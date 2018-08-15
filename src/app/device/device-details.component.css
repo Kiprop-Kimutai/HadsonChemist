@@ -22,9 +22,7 @@
   .-mat-slider-toggle {
     margin: 10px;
   }
-  .device-input{
 
-  }
   .device-action-buttons{
     width:100%;
   }
@@ -83,4 +81,11 @@
     .cancel-button,.trash-button{
       margin-left:2%;
     }
+  }
+  @media only screen  and (max-device-width:271px){
+    .device-action-buttons{
+      width:150%;
+    }
+
+
   }

@@ -84,6 +84,11 @@ tr:hover{
     margin-left:250vw;
   }
 }
+@media only screen and (max-device-width:271px){
+  .device-details-card{
+    width: 150%;
+  }
+}
 @media only screen and (max-device-width:240px){
   table,mat-paginator{
     width:400%;
