@@ -1,9 +1,11 @@
 var express = require('express');
-var router = express.Router();
-
-//api listings done here
-router.get('/', (req,res,next) =>{
-    res.send("app server is working fine..");
+var app = express();    
+var FirmwareRoutes = require('./firmware-routes');
+const DeviceRoutes = require('./device-routes');
+app.get('/',(requestAnimationFrame,res,next)=>{
+    res.send("ok...");
 })
+app.use('/firmware_routes',FirmwareRoutes);
+app.use('/device_routes',DeviceRoutes);
 
-module.exports = router;
+module.exports = app;
