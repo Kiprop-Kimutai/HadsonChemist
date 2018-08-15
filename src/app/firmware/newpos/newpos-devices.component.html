@@ -8,29 +8,29 @@
     <div>
         <label for = "filename">filename</label><br>
         <mat-form-field>
-            <input class = "input" matInput type = "text" formControlName = "filename"/>
+            <input class = "input" matInput type = "text" formControlName = "filename" [(ngModel)] = "uploadedFirmware.filename" name = "filename"/>
         </mat-form-field>
     </div>
     <div>
         <label for = "type">type</label><br>
         <mat-form-field>
-           <input class = "input" matInput type = "text" formControlName = "type"/>
+           <input class = "input" matInput type = "text" formControlName = "type" [(ngModel)] = "uploadedFirmware.type" name = "type"/>
         </mat-form-field>
     </div>
     <div>
         <label for = "version">version</label><br>
         <mat-form-field>
-         <input class = "input" matInput type = "text" placeholder = "1.2.1" formControlName = "version" required/>
+         <input class = "input" matInput type = "text" placeholder = "1.2.1" formControlName = "version"  [(ngModel)] = "uploadedFirmware.version" required/>
         </mat-form-field>
     </div>
     <div>
         <label for = "model">device model</label><br>
         <mat-form-field>
-        <input class = "input" matInput type = "text" placeholder = "saral infotech" formControlName = "model" required/>
+        <input class = "input" matInput type = "text" placeholder = "saral infotech" formControlName = "model" [(ngModel)] = "uploadedFirmware.model" required/>
         </mat-form-field>
     </div>
     <div>
-        <button [disabled] = "firmwareFormGroup.status === 'INVALID'" mat-raised-button style = "background-color:teal;">upload</button>
+        <button [disabled] = "firmwareFormGroup.status === 'INVALID'" mat-raised-button style = "background-color:teal;" (click) = "uploadFile()">upload</button>
     </div>
   </form>
 </mat-card>

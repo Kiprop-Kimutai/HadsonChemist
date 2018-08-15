@@ -2,6 +2,8 @@ import {Component,OnInit,ElementRef,ViewChild} from '@angular/core';
 import {DeviceFirmware} from '../../models/device-firmware';
 import {FirmwareFiles} from '../../models/firmware_files';
 import {FormGroup,FormControl,Validators,FormBuilder} from '@angular/forms';
+import {DialogService} from '../../dialog.service';
+import {FirmwareService} from '../firmware-service';
 @Component({
     selector:'newpos-devices',
     templateUrl:'./newpos-devices.component.html',
@@ -12,15 +14,15 @@ export class NewposDevicesComponent implements OnInit{
     uploadedFile:File = null;
     uploadedFirmware:FirmwareFiles = new FirmwareFiles('','','','','');
     firmwareFormGroup:FormGroup;
-    constructor(private fb:FormBuilder){
+    constructor(private fb:FormBuilder,private dialogService:DialogService,private firmwareService:FirmwareService){
         this.createForm();
     }
     createForm(){
         this.firmwareFormGroup = new FormGroup({
-            filename:new FormControl('',[Validators.required]),
-            type:new FormControl('',[Validators.required]),
-            version:new FormControl('',[Validators.required]),
-            model:new FormControl('',[Validators.required])
+            filename:new FormControl(this.uploadedFirmware.filename,[Validators.required]),
+            type:new FormControl(this.uploadedFirmware.type,[Validators.required]),
+            version:new FormControl(this.uploadedFirmware.model,[Validators.required]),
+            model:new FormControl(this.uploadedFirmware.model,[Validators.required])
 
         })
     }
@@ -31,7 +33,7 @@ export class NewposDevicesComponent implements OnInit{
     }
     uploadFile(){
         console.log("Will upload file");
-        console.log(this.firmwareFormGroup.value);
+        //this.firmwareService.uploadFirmware(this.uploadedFirmware).subscribe(res =>{console.log(res)});
     }
     onFileUpload(event){
         let reader = new FileReader();
@@ -46,15 +48,18 @@ export class NewposDevicesComponent implements OnInit{
         reader.readAsDataURL(this.uploadedFile);
         reader.onload = () =>{
             console.log(reader.result.split(',')[1]);
-            this.uploadedFirmware.checksum = reader.result.split(',')[1];
+            this.uploadedFirmware.md5sum = reader.result.split(',')[1];
         }
-               /* this.firmwareFormGroup.get('avatar').setValue({
-                    filename:file.name,
-                    fileType:file.type,
-                    checksum:reader.result.split(',')[1]
-                })*/
-       
+      
     }
+    canDeactivate(){
+        if(JSON.stringify(new FirmwareFiles('','','','','')) == JSON.stringify(this.uploadedFirmware)){
+            return true;
+        }
+        return this.dialogService.confirm('Are you sure to discard?');
+  
+    }
+    
     ngOnInit(){
 
     }

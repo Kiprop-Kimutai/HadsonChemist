@@ -1,1 +1,56 @@
-<span>update saral infotech firmware </span>
+<!--<div class = "body">
+    <mat-card>
+  <input style = "display: none;" type = "file" (change) = "onFileUpload($event)" #fileInputHandler/>
+      <div>
+          <button style = "margin-left:40%;background-color: teal"mat-raised-button  type = "button" (click) = "fileInputHandler.click()">select file</button>
+      </div>
+</mat-card>
+</div>-->
+<div class = "body">
+    <mat-card [hidden] = "!hideProgress" [ngStyle] = "{opacity:enableOpacity == true ? 0.1 :1}">
+  <input style = "display: none;" type = "file" (change) = "onFileUpload($event)" #fileInputHandler/>
+  <form [formGroup] = "firmwareFormGroup" fxFlexOffset.gt-xs = "30%" fxFlex.gt-xs = "40%">
+      <div>
+          <button style = "margin-left:40%;background-color: teal"mat-raised-button  type = "button" (click) = "fileInputHandler.click()">select file</button>
+      </div>
+    <div>
+        <label for = "filename">filename</label><br>
+        <mat-form-field>
+            <input class = "input" matInput type = "text" formControlName = "filename" [(ngModel)] = "uploadedFirmware.filename" name = "filename" disabled/>
+        </mat-form-field>
+    </div>
+    <div>
+        <label for = "type">type</label><br>
+        <mat-form-field>
+           <input class = "input" matInput type = "text" formControlName = "type" [(ngModel)] = "uploadedFirmware.type" name = "type"/>
+        </mat-form-field>
+    </div>
+    <div>
+        <label for = "version">version</label><br>
+        <mat-form-field>
+         <input class = "input" matInput type = "text" placeholder = "1.2.1" formControlName = "version"  [(ngModel)] = "uploadedFirmware.version" required/>
+        </mat-form-field>
+    </div>
+    <div>
+        <label for = "model">device model</label><br>
+        <mat-form-field>
+        <input class = "input" matInput type = "text" placeholder = "saral infotech" formControlName = "model" [(ngModel)] = "uploadedFirmware.model" required/>
+        </mat-form-field>
+    </div>
+    <div>
+        <button [disabled] = "firmwareFormGroup.status === 'INVALID'" mat-raised-button style = "background-color:teal;" (click) = "uploadFirmware()">upload</button>
+    </div>
+  </form>
+</mat-card>
+<div [hidden] = "hideProgress" class = "mat-progress">
+    <!--<mat-progress-bar color = "primary" mode="determinate" value="40"></mat-progress-bar> -->
+    <mat-progress-bar
+          class="example-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value"
+          [bufferValue]="bufferValue">
+      </mat-progress-bar>
+      <span style = "display:block;margin-left:40%">progress {{value}} %</span>
+    </div>
+</div>
