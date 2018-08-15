@@ -4,10 +4,12 @@ import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {DeviceListComponent} from './device/device-list.component';
+import {DeviceFirmwareComponent} from './device_firmware/device_firmware';
 import {DeviceComponent} from './device/device.component';
 import {PageNotFoundComponent} from './page-not-found.component';
 import {AuthGuardService} from './auth-guard.service';
 import {CanDeactivateGuard} from './can-deactivate-guard.service';
+
 const appRoutes:Routes = [
   {
     path:'',
@@ -32,13 +34,39 @@ const appRoutes:Routes = [
       },
       {
         path:'devices',
+        children:[
+          {
+            path:'device-list',
+            component:DeviceListComponent
+          },
+          {
+            path:'device_firmware',
+            component:DeviceFirmwareComponent
+          },
+          {
+            path:'device-list/:id',
+            component:DeviceComponent,
+            canDeactivate:[CanDeactivateGuard]
+          },
+          {
+            path:'',
+            component:DeviceListComponent
+          }
+        ]
+      },
+     /* {
+        path:'devices',
         component:DeviceListComponent
+      },
+      {
+        path:'device_firmware',
+        component:DeviceFirmwareComponent
       },
       {
         path:'device/:id',
         component:DeviceComponent,
         canDeactivate:[CanDeactivateGuard]
-      },
+      },*/
       {
         path:'dashboard',
         component:DashboardComponent
