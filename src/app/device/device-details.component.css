@@ -1,0 +1,91 @@
+/***** DEVICE DETAILS' STYLES **********/
+.device-details-body{
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    
+  }
+
+  .device-details-card{
+      margin-top:20px;
+  }
+  
+  .device-background-image{
+    background-image: url("../../assets/devices/NEWPOS_9220.png");
+    background-size: cover;
+  }
+  .device-form-group{
+    position: relative;
+    margin:auto;
+    margin-top:20px;
+  }
+  .-mat-slider-toggle {
+    margin: 10px;
+  }
+
+  .device-action-buttons{
+    width:100%;
+  }
+  .cancel-button{
+   /*margin-left:30%;*/
+    background-color: teal;
+  }
+  .trash-button{
+    /*margin-left:30%;*/
+    background-color: teal;
+  }
+  .input-errors{
+    color:red;
+  }
+
+  @media only screen and (min-device-width:1000px){
+    .cancel-button,.trash-button{
+      margin-left:30%;
+    }
+    .device-details-body{
+      margin-left: 30px;
+    }
+    .device-form-group{
+      width:30%;
+    }
+  }
+  @media only screen and (max-device-width:999px){
+    .cancel-button,.trash-button{
+      margin-left:20%;
+    }
+    table{
+      width:120%;
+    }
+  }
+  @media only screen and (max-device-width:823px){
+    .cancel-button,.trash-button{
+      margin-left:15%;
+    }
+  }
+  @media only screen and (max-device-width:420px){
+    mat-form-field{
+      width:50%;
+    }
+    .cancel-button,.trash-button{
+      margin-left:10%;
+    }
+  }
+
+  @media only screen and (max-device-width:332px){
+    .cancel-button,.trash-button{
+      margin-left:5%;
+    }
+  }
+
+  @media only screen and (max-device-width:298px){
+    .cancel-button,.trash-button{
+      margin-left:2%;
+    }
+  }
+  @media only screen  and (max-device-width:271px){
+    .device-action-buttons{
+      width:150%;
+    }
+
+
+  }

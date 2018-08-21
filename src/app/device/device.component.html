@@ -1,0 +1,85 @@
+<div class = "device-details-body">
+    <div>
+        <mat-card class = "device-details-card" fxFlexOffset.gt-xs = "10%" fxFlex = "80%" fxFlex.xs = "160%">
+            <div>
+                <span><img src = "../../assets/devices/NEWPOS_9220.png" style="display:block;margin-left:auto;margin-right:auto;"/></span>
+            </div>
+            <div>
+                <form [formGroup] = "deviceFormGroup" class = "device-form-group" (ngSubmit) = "updateDevice()">
+                    <table>
+                    <tr>
+                        <td>
+                    <div>
+                        <label for = "macaddress" class = "field-label">macaddress</label><br>
+                        <mat-form-field class = "device-input">
+                            <input matInput value = "{{device$.macaddress}}" type = "text"  formControlName = "macaddress" />
+                        </mat-form-field>
+                    </div>
+                        </td>
+                        <td>
+                    <div>
+                        <label for = "serialno" class = "field-label">serial no</label><br>
+                        <mat-form-field class = "device-input">
+                            <input matInput value ="{{device$.serialno}}" type = "text"formControlName = "serialno"/>
+                        </mat-form-field>
+                    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <div>
+                        <label for = "model" class = "field-label">model</label><br>
+                        <mat-form-field class = "device-input">
+                            <input  matInput value="{{device$.model}}" type = "text" formControlName = "model"/>
+                        </mat-form-field>
+                    </div>
+                        </td>
+                        <td>
+                    <div>
+                        <label for = "kernel" class = "field-label">kernel</label><br>
+                        <mat-form-field>
+                            <input matInput value = "{{device$.kernel}}" type = "text" formControlName = "kernel" required/>
+                        </mat-form-field>
+                        <div *ngIf = "deviceFormGroup.get('kernel').touched">
+                            <span *ngIf = "deviceFormGroup.hasError('minlength','kernel')" class = "input-errors">invalid input for kernel</span><br>
+                            <span *ngIf = "deviceFormGroup.hasError('required','kernel')" class = "input-errors">device kernel is required</span>
+                        </div>
+                    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <div>
+                        <label for = "firmware" class = "field-label">firmware</label><br>
+                        <mat-form-field>
+                            <input matInput value = "{{device$.firmware}}" type = "text" formControlName = "firmware" required/>
+                        </mat-form-field>
+                        <div *ngIf = "deviceFormGroup.get('firmware').touched">
+                            <span *ngIf = "deviceFormGroup.hasError('required','firmware')" class = "input-errors">firmware field can't be null</span><br>
+                            <span *ngIf = "deviceFormGroup.hasError('invalid versioning','firmware')" class = "input-errors">invalid firmware versioning</span>
+                        </div>
+                    </div>
+                        </td>
+                    <td>
+                    <div>
+                        <label for = "active" class = "field-label">status</label><br>
+                        <mat-slide-toggle formControlName = "active"
+                            [color] = "color"
+                            [checked] = "checked"
+                            [disabled] = "disabled">
+                            active
+                        </mat-slide-toggle>
+                    </div>
+                    </td>
+                    </tr>
+                    </table>
+                </form>
+            </div>
+            <div class = "device-action-buttons">
+                <button style = "background-color:teal;"mat-raised-button [disabled] = "deviceFormGroup.status === 'INVALID'" mat-raised-button matTooltip = "update device" (click) = "updateDevice()">update</button>
+                <button mat-raised-button class = "cancel-button" matTooltip = "cancel" (click) = "cancelChangesOnDevice()">cancel</button>
+                <button mat-raised-button class = "trash-button" matTooltip = "delete device">delete</button>
+            </div>
+        </mat-card>
+    </div>
+</div>

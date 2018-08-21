@@ -1,0 +1,21 @@
+<div class = "body">
+<div class = "toolbar">
+<mat-toolbar class  = "mat-toolbar" fxFlex.sm = "100vw">
+<button mat-icon-button ><img src = "../../assets/icons/menu.png" (click) ="drawer.toggle()"/></button>
+<!--<button  mat-icon-button fxFlexOffset = "90%" fxFlexOffset.gt-md = "94%" matTooltip = <{{loggedInuser}}><img src = "../../assets/icons/account.png"/></button>-->
+<button  mat-icon-button fxFlexOffset = "90%" fxFlexOffset.gt-md = "94%" fxFlexOffset.xs = "77vw" matTooltip = "Jonah Hexx"><img src = "../../assets/icons/account.png"/></button>
+</mat-toolbar>
+</div>
+<div>
+<mat-drawer-container class = "mat-drawer-container">
+<mat-drawer mode = {{sidenavMode}}  [opened] = isSidenavOpened class = "mat-drawer" #drawer>
+<navlist-component *ngFor = "let menu of menus" [menu] = menu></navlist-component>
+</mat-drawer>
+<mat-drawer-content>
+<router-outlet></router-outlet>
+</mat-drawer-content>
+</mat-drawer-container>
+</div>
+<div>
+</div>
+</div>

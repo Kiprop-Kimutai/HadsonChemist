@@ -1,0 +1,138 @@
+table{
+  width:100%;
+
+}
+tr:hover{
+  background-color: rgba(243, 237, 237, 0.856);
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.body{
+ margin:5px;
+}
+.filterField{
+  width:30%;
+}
+.add-button{
+  position: relative;
+  /**margin-left:80vw;**/
+}
+
+/***MEDIA QUERIES FOR ADD DEVICES BUTTON *****/
+@media only screen and (min-device-width:1280px){
+  .add-button{
+    margin-left:80vw;
+  }
+}
+@media only screen and (min-device-width:820px){
+  .add-button{
+    margin-left:80vw;
+  }
+}
+@media only screen and (max-device-width:819px){
+  .add-button{
+    margin-left:90vw;
+  }
+}
+
+
+
+/**********************************************/
+
+@media only screen and (min-device-width:499px){
+  .body{
+    margin-right: 5px;
+    margin-left:5px;
+  }
+  .filterField{
+    width:50%;
+  }
+}
+
+@media only screen and (max-device-width:643px){
+  table,mat-paginator{
+   width:200%;
+  }
+  .filterField{
+    width:70%;
+  }
+  .add-button{
+    margin-left:185vw;
+  }
+
+}
+@media only screen and (max-device-width:394px){
+  table,mat-paginator{
+    width:200%;
+    /*background-color: aqua;*/
+  }
+  .filterField{
+    width:100%;
+  }
+
+}
+@media only screen and (max-device-width:300px){
+  table,mat-paginator{
+    width:250%;
+  }
+  .filterField{
+    width:100%;
+  }
+  .add-button{
+    margin-left:250vw;
+  }
+}
+@media only screen and (max-device-width:271px){
+  .device-details-card{
+    width: 150%;
+  }
+}
+@media only screen and (max-device-width:240px){
+  table,mat-paginator{
+    width:400%;
+  }
+  .filterField{
+    width:100%;
+  }
+  .add-button{
+    margin-left:420vw;
+  }
+}
+@media only screen and (max-device-width:215px){
+  .add-button{
+    margin-left:550vw;
+  }
+}
+@media only screen and (max-device-width:200px){
+  .add-button{
+    margin-left:530vw;
+  }
+}
+@media only screen and (max-device-width:134px){
+  .add-button{
+    margin-left:695vw;
+  }
+}
+@media only screen and (max-device-width:117px){
+  .add-button{
+    margin-left:680vw;
+  }
+}
+@media only screen and (max-device-width:110px){
+  .add-button{
+    margin-left:675vw;
+  }
+}
+@media only screen and (max-device-width:89px){
+  .add-button{
+    margin-left:800vw;
+  }
+}
+
+
+
+
+
+

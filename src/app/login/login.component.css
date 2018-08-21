@@ -1,0 +1,102 @@
+.body{
+    height:100vh;
+    width:100%;
+
+}
+.mainHeader{
+  height:18vh;
+  background-color: #302f3d;
+  margin:-8px;
+
+}
+.mainHeaderImage{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: -5px;
+  z-index: -1;
+  height:18vh
+}
+.header{
+  height:20vh;
+  width:100%;
+  background-color: purple;
+}
+.classOne{
+
+  margin-top:-20px;
+ }
+.userforms{
+  margin:auto;
+  width:50%;
+}
+.loginform{
+  margin:auto;
+  width:50%;
+  margin-top: 10vh;
+  /*background-color: green;*/
+
+}
+
+.inputContainerTouched{
+  outline-style: solid;
+  outline-color: #dd0031
+}
+
+.input-field{
+  width:60%;
+}
+.login-button{
+}
+.field-label{
+  font-size:0.9em;
+}
+
+.input-errors{
+  color:red;
+}
+
+.formGroup{
+}
+.spaceFormGroups{
+  margin-top:10px;
+}
+.html{
+
+ background-size: cover;
+}
+
+@media only screen and (min-device-width:1360px) {
+  .header{
+    /*background-size: contain;*/
+   /*background-size: cover;*/
+   background-size: 100% 90%;
+  }
+
+}
+@media only screen and (max-device-width:1360px), only screen and (min-device-width:768px){
+  .header{
+    background-size: contain;
+  }
+}
+@media only screen and (max-device-width:768px){
+  .header{
+    /*background-size:100% 80vh;*/
+    background-size: contain;
+
+  }
+}
+
+@media only screen and (min-device-width:668px){
+  .login-formGroup{
+    padding-left: 35%
+  }
+  .login-button{
+    padding-left:40%;
+  }
+}
+@media only screen and (max-device-width:252px){
+  .loginform{
+    width:100%;
+  }
+}

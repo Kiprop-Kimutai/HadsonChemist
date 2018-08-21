@@ -1,0 +1,10 @@
+/*label::after{
+  content:'*';
+  color:red;
+}*/
+.required-label{
+  label::after{
+    content:'*';
+    color: red;
+  }
+}

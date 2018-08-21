@@ -1,0 +1,165 @@
+<div class = "body">
+<h3 class = "dialog-title" style = "margin-left:40%">Add Stock</h3>
+<form [formGroup] = "productFormGroup" (ngSubmit) = "addProduct()">
+<table>
+<tr>
+<td>
+<div>
+<mat-form-field class = "input-field">
+<input name = "product_code" id = "product_code" matInput placeholder = "product_code" formControlName = "product_code" required/>
+</mat-form-field>
+<div *ngIf = "productFormGroup.get('product_code').touched">
+<span class = "input-errors" *ngIf = "productFormGroup.hasError('required','product_code')">product code is required</span>
+</div>
+</div>
+</td>
+<td>
+<div>
+<mat-form-field>
+    <input matInput placeholder = "generic name" id = "gen_name" name = "gen_name" formControlName = "gen_name" name = "gen_name" required/>
+</mat-form-field>
+</div>
+</td>
+<td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "product_name" id = "product_name" name = "product_name"  formControlName = "product_name" required/>
+            </mat-form-field>
+        </div>
+</td>
+</tr>
+<tr>
+<td>
+    <mat-form-field>
+        <input matInput placeholder="invoice_no" formControlName = "invoice_no" required/>
+    </mat-form-field>
+</td>
+<td>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder = "supplier" id = "supplier" name = "supplier" formControlName = "supplier" required/>
+        </mat-form-field>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="units" formControlName = "units" required/>
+            </mat-form-field>
+        </div>
+    </td>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "unit_quantity" formControlName = "unit_quantity" required/>
+            </mat-form-field>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder = "unit_price" formControlName = "unit_price" required/>
+        </mat-form-field>
+    </div>
+   </td>
+   <td>
+       <div>
+           <mat-form-field>
+               <input matInput placeholder="actual_cost" formControlName = "actual_cost" required/>
+           </mat-form-field>
+       </div>
+   </td>
+</tr>
+<tr>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="discount" formControlName = "discount" required/>
+            </mat-form-field>
+        </div>
+    </td>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="unit_discount" formControlName = "unit_discount" required/>
+            </mat-form-field>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "cost" formControlName = "cost" required/>
+            </mat-form-field>
+        </div>
+    </td>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "ordering_price" formControlName = "ordering_price" required>
+            </mat-form-field>
+        </div>
+    </td>
+
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "selling_price" formControlName = "selling_price" required/>
+            </mat-form-field>
+        </div>
+    </td>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "profit" formControlName = "profit" required/>
+            </mat-form-field>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "original_quantity" formControlName = "original_quantity"required/>
+            </mat-form-field>
+        </div>
+    </td>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder = "qty_sold"  formControlName = "qty_sold" required/>
+            </mat-form-field>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="onhand_qty" formControlName = "onhand_qty" required/>
+            </mat-form-field>
+        </div>
+    </td>
+    <td>
+        <div>
+            <!--<mat-form-field>
+                <input matInput placeholder="expiry_date" formControlName = "expiry_date" required/>
+            </mat-form-field>-->
+            <mat-form-field>
+                    <input matInput formControlName = "expiry_date" [matDatepicker]="picker" placeholder="expiry date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </td>
+</tr>
+</table>
+<button type = "submit" mat-raised-button style = "background-color:teal">add stock</button>
+</form>
+<button (click) = "testValues()">test values</button>
+</div>

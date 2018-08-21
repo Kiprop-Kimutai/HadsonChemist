@@ -1,0 +1,35 @@
+<div class = "loginform">
+<mat-card>
+<form [formGroup] = "userForm" class = "login-formGroup" (ngSubmit) = "login(user.username,user.password)">
+<div class = "formGroup">
+<label for = "username" class = "field-label">username</label><br>
+<mat-form-field class = "input-field">
+<input matInput type = "text"  formControlName = "username" [(ngModel)] = "user.username" name ="username"  required/>
+</mat-form-field>
+<div *ngIf = "userForm.get('username').touched">
+<span *ngIf = "userForm.hasError('required','username')" class = "input-errors">username is required</span>
+<span *ngIf = "userForm.hasError('invalidPassword','username')" class = "input-errors">only letters allowed</span>
+</div>
+</div>
+  <div class = "formGroup">
+  <label class = "field-label" >password</label><br>
+  <mat-form-field class = "input-field">
+  <input matInput id = "password" type = "password" formControlName = "password" [(ngModel)] = "user.password" name = "password"/>
+  </mat-form-field>
+  <div *ngIf= "userForm.get('password').touched">
+  <span *ngIf = "userForm.hasError('required','password')" class = "input-errors">password required</span>
+  <span *ngIf = "userForm.hasError('minlength','password')" class = "input-errors">minimum 8 characters</span>
+  </div>
+  </div>
+<div class = "login-button">
+<button type = "submit"[disabled] = "userForm.status === 'INVALID'"mat-raised-button  color = "primary">sign in</button>
+</div>
+<div style = "margin-top:10%;font-size:0.7em;">
+<span>New? <label style="color:blue;text-decoration:underline" (click) = "requestRegistration()">Register instead</label></span>
+</div>
+</form>
+</mat-card>
+</div>
+
+
+

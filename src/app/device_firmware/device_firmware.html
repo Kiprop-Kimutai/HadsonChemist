@@ -1,0 +1,33 @@
+<h3>Assign device firmware here</h3>
+<div>
+    <form [formGroup] = "queryFirmwareFormGroup">
+        <table class = "firmware-form-table">
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-select placeholder = "Device model" formControlName = "device_model" required>
+                            <mat-option></mat-option>
+                        </mat-select>
+                        <mat-error *ngIf = "queryFirmwareFormGroup.hasError('required','device_model')">device model is required</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-select placeholder = "Firmware" formControlName = "firmware" required>
+                            <mat-option></mat-option>
+                        </mat-select>
+                        <mat-error *ngIf = "queryFirmwareFormGroup.hasError('required','firmware')">select firmware</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-select placeholder = "Version" formControlName = "version" required>
+                            <mat-option></mat-option>
+                        </mat-select>
+                        <mat-error *ngIf = "queryFirmwareFormGroup.hasError('required','version')">firmare version</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
